@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101113" />
+  <meta name="description" content="Aprende los artículos alemanes jugando. Partidas rápidas, rachas y repetición inteligente." />
+  <title>Deutsch Brava — juega con los artículos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Deutsch Brava, inicio"><span class="brand-mark">D<span>!</span></span><span>deutsch<br><b>brava</b></span></a>
+      <div class="top-meta"><span class="live-dot"></span> TU RINCÓN DE ALEMÁN <span class="meta-sep">·</span> <span id="header-streak">0 días seguidos</span></div>
+      <button class="profile-button" id="profile-open" aria-label="Editar perfil"><span id="avatar">L</span><span id="profile-name">Lena</span><span class="chevron">⌄</span></button>
+    </header>
+
+    <main id="home" class="main-content">
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span>✳</span> TU ENTRENAMIENTO DE HOY</div><h1>El alemán<br>se te <em>queda.</em></h1><p class="hero-description">Un artículo cada vez. Rondas rápidas, memoria afilada<br class="desktop-only"> y un poquito de pique sano.</p>
+          <div class="hero-actions"><button class="primary-button" id="start-main"><span>Jugar en solitario</span><span class="button-arrow">↗</span></button><button class="friends-button" id="friends-open"><span>♧</span> Con amigos</button><div class="players-note"><span class="avatar-stack"><i>J</i><i>M</i><i>A</i></span><span>Una ronda y listo.<br><b>Tu cerebro te lo agradece.</b></span></div></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="sunburst">✳</div><div class="floating-card card-der"><span>DER</span><b>TISCH</b><small>mesa</small><i>↗</i></div><div class="floating-card card-die"><span>DIE</span><b>SONNE</b><small>sol</small><i>✳</i></div><div class="floating-card card-das"><span>DAS</span><b>HERZ</b><small>corazón</small><i>♥</i></div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span></div>
+      </section>
+
+      <section class="progress-strip" aria-label="Tu progreso"><div class="progress-intro"><span class="progress-icon">↗</span><div><strong>Vas por buen camino</strong><small>Tu progreso se guarda en este dispositivo</small></div></div><div class="progress-stat"><strong id="stat-learned">0<span> / 500</span></strong><small>palabras dominadas</small></div><div class="progress-stat"><strong id="stat-accuracy">—</strong><small>aciertos totales</small></div><div class="progress-stat"><strong id="stat-games">0</strong><small>partidas jugadas</small></div><div class="progress-stat"><strong id="stat-points">0</strong><small>puntos acumulados</small></div><div class="progress-stat streak-stat"><strong><span class="flame">♨</span> <span id="stat-best-streak">0</span></strong><small>racha máxima</small></div></section>
+
+      <section class="section-heading"><div><div class="eyebrow">ELIGE TU PLAN</div><h2>Una ronda, a tu manera.</h2></div><span class="section-side-note">Empieza en segundos <span>↘</span></span></section>
+      <section class="game-layout">
+        <div class="play-card"><div class="play-card-top"><span class="mode-icon">◉</span><span class="available-pill"><i></i> DISPONIBLE AHORA</span><span class="card-number">01 / 01</span></div><div class="play-card-body"><div class="eyebrow">MODO DE JUEGO</div><h3>Der, die o das</h3><p>Elige el artículo correcto antes de que se enfríe la racha.</p><div class="article-mini"><span class="article-der">DER</span><span class="article-die">DIE</span><span class="article-das">DAS</span></div></div><div class="play-card-bottom"><span>Palabras adaptadas a tu nivel</span><span class="mini-arrow">↗</span></div></div>
+        <div class="setup-card"><div class="setup-heading"><div><div class="eyebrow">AJUSTA EL RITMO</div><h3>¿Cuánto tiempo tienes?</h3></div><span class="clock-icon">◷</span></div><div class="length-options" role="group" aria-label="Duración de la partida"><button data-length="10" class="length-option"><b>10</b><small>rápida</small></button><button data-length="20" class="length-option selected"><b>20</b><small>tranqui</small></button><button data-length="30" class="length-option"><b>30</b><small>en serio</small></button><button data-length="50" class="length-option"><b>50</b><small>a tope</small></button><button data-length="0" class="length-option endless"><b>∞</b><small>sin fin</small></button></div><button class="start-button" id="start-selected"><span>Empezar ronda</span><span>→</span></button><div class="setup-foot"><span>✦</span> También puedes salir cuando quieras.</div></div>
+      </section>
+
+      <section class="bottom-grid"><div class="mastery-card"><div class="bottom-card-heading"><div><div class="eyebrow">TU MAPA DE ARTÍCULOS</div><h3>¿Cómo vas con cada uno?</h3></div><span class="mastery-total" id="mastery-total">0 palabras</span></div><div class="mastery-row"><span class="mastery-label article-der">DER</span><div class="mastery-track"><div id="mastery-der" class="mastery-fill fill-der"></div></div><span class="mastery-count" id="count-der">0</span></div><div class="mastery-row"><span class="mastery-label article-die">DIE</span><div class="mastery-track"><div id="mastery-die" class="mastery-fill fill-die"></div></div><span class="mastery-count" id="count-die">0</span></div><div class="mastery-row"><span class="mastery-label article-das">DAS</span><div class="mastery-track"><div id="mastery-das" class="mastery-fill fill-das"></div></div><span class="mastery-count" id="count-das">0</span></div><div class="mastery-legend"><span><i class="legend-dot legend-known"></i> aprendidas</span><span><i class="legend-dot legend-total"></i> por descubrir</span><span id="reinforce-note">Las difíciles vuelven antes</span></div></div>
+        <div class="locked-card"><div class="locked-orbit"></div><div class="lock-icon">⌑</div><div class="eyebrow">HABRÁ MÁS</div><h3>Se vienen<br>cosas buenas.</h3><p>Nuevas formas de aprender están en camino.</p><div class="coming-chip"><span>✳</span> PRÓXIMAMENTE</div><div class="locked-decoration">✣</div></div>
+      </section>
+      <footer class="footer"><span>DEUTSCH BRAVA <b>✳</b></span><span>Hecho para aprender sin darse cuenta.</span><button id="reset-data">Reiniciar mi progreso</button></footer>
+    </main>
+  </div>
+
+  <section id="game-screen" class="game-screen hidden" aria-live="polite">
+    <header class="game-top"><button id="quit-game" class="quit-button">← <span>Salir</span></button><div class="game-brand">D<span>!</span> <b>BRAVA</b></div><div class="game-score"><span>✳</span> <b id="current-score">0</b> pts</div></header>
+    <div class="game-progress"><div class="progress-bar"><div id="question-progress"></div></div><div class="game-progress-label"><span id="question-count">PREGUNTA 1</span><span id="streak-label">✦ Racha: 0</span></div></div>
+    <div class="question-area"><div id="question-kicker" class="question-kicker">AQUÍ VA LA SIGUIENTE</div><div id="word-card" class="word-card"><div class="word-category" id="word-category">CASA Y OBJETOS</div><h1 id="question-word">Tisch</h1><div class="word-translation" id="word-translation">¿cómo se dice?</div><div id="word-hint" class="word-hint hidden"></div></div><p class="choose-prompt">¿Qué artículo lleva?</p><div class="answer-buttons"><button class="answer-button answer-der" data-article="der"><span class="answer-symbol">◆</span><b>DER</b><small>masculino</small><kbd>1</kbd></button><button class="answer-button answer-die" data-article="die"><span class="answer-symbol">●</span><b>DIE</b><small>femenino</small><kbd>2</kbd></button><button class="answer-button answer-das" data-article="das"><span class="answer-symbol">■</span><b>DAS</b><small>neutro</small><kbd>3</kbd></button></div><div id="feedback" class="feedback" aria-live="assertive"></div><div class="game-help">Pulsa <kbd>1</kbd> <kbd>2</kbd> o <kbd>3</kbd> para responder</div></div>
+  </section>
+
+  <section id="online-screen" class="online-screen hidden">
+    <div class="online-shell"><header class="online-top"><button id="online-close" class="quit-button">← <span>Inicio</span></button><div class="game-brand">D<span>!</span> <b>BRAVA · EN LÍNEA</b></div><span class="online-live"><i></i> MULTIJUGADOR</span></header><main id="online-content" class="online-content"></main></div>
+  </section>
+
+  <section id="results-screen" class="results-screen hidden"><div class="results-card"><div class="results-spark">✳</div><div class="eyebrow">RONDA TERMINADA</div><h1 id="result-title">¡Bien jugado!</h1><p class="result-subtitle" id="result-subtitle">Cada ronda cuenta.</p><div class="result-score"><span>PUNTUACIÓN</span><b id="result-score">0</b><small>puntos</small></div><div class="result-grid"><div><b id="result-correct">0</b><small>aciertos</small></div><div><b id="result-wrong">0</b><small>por reforzar</small></div><div><b id="result-percent">0%</b><small>precisión</small></div><div><b id="result-time">0 s</b><small>media por palabra</small></div></div><div id="wrong-list" class="wrong-list"></div><div class="result-actions"><button id="play-again" class="primary-button">Otra ronda <span class="button-arrow">↗</span></button><button id="back-home" class="secondary-button">Volver al inicio</button></div></div></section>
+
+  <dialog id="profile-dialog" class="profile-dialog"><form method="dialog"><button class="dialog-close" aria-label="Cerrar">×</button><div class="eyebrow">TU PERFIL</div><h2>¿Cómo te llamamos?</h2><label for="name-input">Tu nombre</label><input id="name-input" maxlength="18" autocomplete="given-name" placeholder="Lena"><button class="start-button" id="save-profile" value="save">Guardar nombre <span>→</span></button></form></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
